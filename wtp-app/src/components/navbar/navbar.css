@@ -5,7 +5,10 @@
  display: grid;
  grid-template-columns: auto 1fr;
  align-items: center;
- background-color: #909cc236;
+ background-color: #277da1;
+ border-radius: 1%;
+ border-color: #1c093d;
+ border: #1c093d;
 }
 
 .name{
