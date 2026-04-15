@@ -1,6 +1,6 @@
 .container{
     display: grid;
-    grid-template-rows: auto repeat(8, 0.9fr) auto;
+    grid-template-rows: repeat(10, auto);
     
 }
 
