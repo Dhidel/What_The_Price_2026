@@ -11,10 +11,20 @@ background-color: #277da1;
 .caption{
 grid-row: 1/2;
 text-align: center;
-color: rgba(238, 236, 234, 0.776);
-font-family: "Lexend" sans-serif;
-font-weight: 700;
 margin-top: 2rem;
+}
+
+.caption span {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(238, 236, 234, 0.85);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 236, 234, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .name{
@@ -37,22 +47,33 @@ color: #170734;
 margin-bottom: 2rem;
 }
 
-.buttons{
-grid-row: 4/5;
-text-align: center;
-border-bottom-color: #170734;
-margin-bottom: 2.5rem;
-color: azure;
+.buttons {
+  grid-row: 4/5;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .button {
-  background-color: #007bff; 
-  color: white; 
-  padding: 12px 44px; 
-  border: none; 
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 2rem;
   border-radius: 8px;
-  font-size: 16px; 
-  border: #000000;
-  margin-right: 20px
+  border: none;
+  cursor: pointer;
+}
+
+.button:first-child {
+  background-color: #170734;
+  color: #F0F4F8;
+}
+
+.button:last-child {
+  background-color: transparent;
+  color: #170734;
+  border: 1.5px solid #170734;
 }
 
