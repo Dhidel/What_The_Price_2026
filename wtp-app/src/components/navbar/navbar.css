@@ -13,7 +13,7 @@
 
 .name{
     grid-column: 1/2;
-    color: #1c093d;
+    color: rgba(238, 236, 234, 0.95);
     font-family: "Syne", sans-serif ;
     font-weight: 800;
     margin-left: 3rem;
@@ -24,7 +24,7 @@
     display: grid;
     grid-column: 2/3;
     grid-template-columns: repeat(6, 1fr);
-    color: black;
+    color: rgba(238, 236, 234, 0.95);
     text-align: center;
     margin-left: 7rem;
     margin-right: 7rem;
