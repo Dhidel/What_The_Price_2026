@@ -1,0 +1,83 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#equipo {
+  background-color: #F0F4F8;
+  padding: 4rem 2rem;
+}
+
+#equipo > span {
+  display: block;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #277da1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+#equipo > h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: #277da1;
+  font-size: xx-large;
+  margin: 0 0 2.5rem;
+}
+
+#equipo > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#equipo > div > div {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+}
+
+#equipo > div > div > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #277da1;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+#equipo > div > div h5 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: #277da1;
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+#equipo > div > div p:first-of-type {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  color: #277da1;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+#equipo > div > div p:last-of-type {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.9rem;
+  margin: 0;
+}
