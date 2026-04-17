@@ -7,7 +7,7 @@
   padding: 4rem 2rem;
 }
 
-#tecnologias > span {
+#tecnologias span {
   display: block;
   text-align: center;
   font-family: "Lexend", sans-serif;
@@ -19,7 +19,7 @@
   margin-bottom: 0.75rem;
 }
 
-#tecnologias > h2 {
+#tecnologias h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
   font-weight: 800;
@@ -28,21 +28,21 @@
   margin: 0 0 2rem;
 }
 
-#tecnologias > div {
+#tecnologias div {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem;
   margin-bottom: 3rem;
 }
 
-#tecnologias > div > div {
+#tecnologias div div {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.25rem;
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
 }
 
-#tecnologias > div > div h5 {
+#tecnologias div div h5 {
   font-family: "Syne", sans-serif;
   font-weight: 700;
   color: #277da1;
@@ -50,13 +50,13 @@
   margin: 0 0 0.75rem;
 }
 
-#tecnologias > div > div ul {
+#tecnologias div div ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#tecnologias > div > div ul li {
+#tecnologias div div ul li {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: #555555;
@@ -64,7 +64,7 @@
   padding: 0.2rem 0;
 }
 
-#tecnologias > p {
+#tecnologias p {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: #555555;

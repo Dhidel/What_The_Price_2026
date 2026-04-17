@@ -10,26 +10,26 @@ footer {
   gap: 1.5rem;
 }
 
-footer > span:first-child {
+footer span:first-child {
   font-family: "Syne", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: rgba(238, 236, 234, 0.95);
 }
 
-footer > span:last-of-type {
+footer span:last-of-type {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   font-size: 0.85rem;
   color: rgba(238, 236, 234, 0.6);
 }
 
-footer > div {
+footer div {
   display: flex;
   gap: 1.5rem;
 }
 
-footer > div a {
+footer div a {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   font-size: 0.85rem;
@@ -37,6 +37,6 @@ footer > div a {
   text-decoration: none;
 }
 
-footer > div a:hover {
+footer div a:hover {
   color: rgba(238, 236, 234, 0.95);
 }

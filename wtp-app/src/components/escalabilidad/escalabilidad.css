@@ -7,7 +7,7 @@
   padding: 4rem 2rem;
 }
 
-#escala > span {
+#escala span {
   display: block;
   text-align: center;
   font-family: "Lexend", sans-serif;
@@ -24,7 +24,7 @@
   margin: 0 auto 1rem;
 }
 
-#escala > h2 {
+#escala h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
   font-weight: 800;
@@ -33,21 +33,21 @@
   margin: 0 0 2.5rem;
 }
 
-#escala > div {
+#escala div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
-#escala > div > div {
+#escala div div {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(238, 236, 234, 0.2);
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-#escala > div > div h6 {
+#escala div div h6 {
   font-family: "Syne", sans-serif;
   font-weight: 700;
   color: rgba(238, 236, 234, 0.95);
@@ -55,7 +55,7 @@
   margin: 0 0 0.75rem;
 }
 
-#escala > div > div p {
+#escala div div p {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: rgba(238, 236, 234, 0.776);
@@ -63,7 +63,7 @@
   margin: 0 0 0.5rem;
 }
 
-#escala > ul {
+#escala ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -72,7 +72,7 @@
   gap: 0.75rem;
 }
 
-#escala > ul li {
+#escala ul li {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: rgba(238, 236, 234, 0.85);
@@ -81,8 +81,8 @@
   position: relative;
 }
 
-#escala > ul li::before {
-  content: "→";
+#escala ul li::before {
+  content: ".";
   position: absolute;
   left: 0;
   color: rgba(238, 236, 234, 0.5);

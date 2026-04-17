@@ -7,7 +7,7 @@
   padding: 4rem 2rem;
 }
 
-#mercado > span {
+#mercado span {
   display: block;
   text-align: center;
   font-family: "Lexend", sans-serif;
@@ -19,7 +19,7 @@
   margin-bottom: 0.75rem;
 }
 
-#mercado > h2 {
+#mercado h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
   font-weight: 800;
@@ -28,7 +28,7 @@
   margin: 0 0 0.75rem;
 }
 
-#mercado > p {
+#mercado p {
   text-align: center;
   font-family: "Lexend", sans-serif;
   font-weight: 400;
@@ -38,13 +38,13 @@
   max-width: 600px;
 }
 
-#mercado > div {
+#mercado div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-#mercado > div > div {
+#mercado div div {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
@@ -52,7 +52,7 @@
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
 }
 
-#mercado > div > div strong {
+#mercado div div strong {
   display: block;
   font-family: "Syne", sans-serif;
   font-weight: 800;
@@ -61,7 +61,7 @@
   margin-bottom: 0.5rem;
 }
 
-#mercado > div > div p {
+#mercado div div p {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: #555555;
