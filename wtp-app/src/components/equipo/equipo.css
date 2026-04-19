@@ -29,7 +29,15 @@
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
+
+#equipo .miembro-card:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(39, 125, 161, 0.2);
+}
+
 
 #equipo .miembro-card span {
   display: inline-flex;
