@@ -25,7 +25,7 @@
 .nav{
     display: grid;
     grid-column: 2/3;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
     color: rgba(238, 236, 234, 0.95);
     text-align: center;
     margin-left: 7rem;
