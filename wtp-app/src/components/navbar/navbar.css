@@ -1,0 +1,39 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import "@fontsource/syne/500.css";
+
+.navbar{
+ display: grid;
+ grid-template-columns: auto 1fr;
+ align-items: center;
+ background-color: #277da1;
+ position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.name{
+    grid-column: 1/2;
+    color: rgba(238, 236, 234, 0.95);
+    font-family: "Syne", sans-serif ;
+    font-weight: 500;
+    margin-left: 3rem;
+    font-size: larger;
+    margin-right: -1rem;
+}
+
+.nav{
+    display: grid;
+    grid-column: 2/3;
+    grid-template-columns: repeat(6, auto);
+    color: rgba(238, 236, 234, 0.95);
+    text-align: center;
+    margin-left: 7rem;
+    margin-right: 1rem;
+    font-family: "Syne", sans-serif;
+}
+
+a{
+    color: rgba(238, 236, 234, 0.95);
+    font-family: "Syne", sans-serif;
+}

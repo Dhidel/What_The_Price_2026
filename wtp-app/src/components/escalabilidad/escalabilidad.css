@@ -1,0 +1,89 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#escala {
+  background-color: #277da1;
+  padding: 4rem 2rem;
+}
+
+#escala span {
+  display: block;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(238, 236, 234, 0.85);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 236, 234, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+  margin: 1rem auto 1.6rem;
+}
+
+#escala h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: rgba(238, 236, 234, 0.95);
+  font-size: xx-large;
+  margin: 0 0 2.5rem;
+}
+
+#escala div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+#escala div div {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 236, 234, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+#escala div div h6 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: rgba(238, 236, 234, 0.95);
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+#escala div div p {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: rgba(238, 236, 234, 0.776);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+#escala ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  display: grid;
+  gap: 0.75rem;
+}
+
+#escala ul li {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: rgba(238, 236, 234, 0.85);
+  font-size: 0.95rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+#escala ul li::before {
+  content: ".";
+  position: absolute;
+  left: 0;
+  color: rgba(238, 236, 234, 0.5);
+}

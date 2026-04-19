@@ -1,0 +1,72 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#mercado {
+  background-color: #F0F4F8;
+  padding: 4rem 2rem;
+}
+
+#mercado span {
+  display: block;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #277da1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+  margin-top: 2rem;
+}
+
+#mercado h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: #277da1;
+  font-size: xx-large;
+  margin: 0 0 0.75rem;
+}
+
+#mercado p {
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.95rem;
+  margin: 0 auto 2.5rem;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+#mercado .estadisticas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+#mercado .estadistica-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+}
+
+#mercado .estadistica-card strong {
+  display: block;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #277da1;
+  margin-bottom: 0.5rem;
+}
+
+#mercado .estadistica-card p {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.9rem;
+  margin: 0;
+}
