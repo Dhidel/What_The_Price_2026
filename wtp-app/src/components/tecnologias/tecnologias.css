@@ -62,3 +62,29 @@
   margin: 0 auto 0.75rem;
   max-width: 600px;
 }
+
+@media (max-width: 1024px) {
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #tecnologias {
+    padding: 2.5rem 1rem;
+  }
+
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #tecnologias h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: 1fr;
+  }
+}

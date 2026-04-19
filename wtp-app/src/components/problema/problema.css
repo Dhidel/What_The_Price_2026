@@ -155,3 +155,47 @@
   margin-top: 1rem;
   text-transform: uppercase;
 }
+
+@media (max-width: 1024px) {
+  .barriers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card--featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .problema-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .barriers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card--featured {
+    grid-column: span 1;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-card--featured .stat-number {
+    font-size: 3.5rem;
+  }
+}

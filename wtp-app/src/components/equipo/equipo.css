@@ -79,3 +79,18 @@
   font-size: 0.9rem;
   margin: 0;
 }
+
+@media (max-width: 640px) {
+  #equipo {
+    padding: 2.5rem 1rem;
+  }
+
+  #equipo h2 {
+    font-size: 1.6rem;
+  }
+
+  #equipo .equipo-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
