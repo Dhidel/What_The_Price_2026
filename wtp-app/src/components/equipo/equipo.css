@@ -25,6 +25,8 @@
 }
 
 #equipo .miembro-card {
+  text-decoration: none;
+  color: inherit;
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
