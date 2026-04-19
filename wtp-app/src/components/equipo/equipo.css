@@ -28,7 +28,7 @@
   margin: 0 0 2.5rem;
 }
 
-#equipo div {
+#equipo .equipo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -36,14 +36,14 @@
   margin: 0 auto;
 }
 
-#equipo div div {
+#equipo .miembro-card {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
 }
 
-#equipo div div span {
+#equipo .miembro-card span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@
   margin-bottom: 0.75rem;
 }
 
-#equipo div div h5 {
+#equipo .miembro-card h5 {
   font-family: "Syne", sans-serif;
   font-weight: 700;
   color: #277da1;
@@ -66,7 +66,7 @@
   margin: 0 0 0.25rem;
 }
 
-#equipo div div p:first-of-type {
+#equipo .miembro-card p:first-of-type {
   font-family: "Lexend", sans-serif;
   font-weight: 600;
   color: #277da1;
@@ -74,7 +74,7 @@
   margin: 0 0 0.5rem;
 }
 
-#equipo div div p:last-of-type {
+#equipo .miembro-card p:last-of-type {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: #555555;

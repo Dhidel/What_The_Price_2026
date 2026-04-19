@@ -33,20 +33,20 @@
   margin: 0 0 2.5rem;
 }
 
-#modelo div {
+#modelo .ingresos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-#modelo div div {
+#modelo .ingreso-card {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(238, 236, 234, 0.2);
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-#modelo div div h5 {
+#modelo .ingreso-card h5 {
   font-family: "Syne", sans-serif;
   font-weight: 700;
   color: rgba(238, 236, 234, 0.95);
@@ -54,7 +54,7 @@
   margin: 0 0 0.5rem;
 }
 
-#modelo div div p {
+#modelo .ingreso-card p {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: rgba(238, 236, 234, 0.776);

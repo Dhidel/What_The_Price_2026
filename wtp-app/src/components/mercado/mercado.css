@@ -38,13 +38,13 @@
   max-width: 600px;
 }
 
-#mercado div {
+#mercado .estadisticas-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-#mercado div div {
+#mercado .estadistica-card {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
@@ -52,7 +52,7 @@
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
 }
 
-#mercado div div strong {
+#mercado .estadistica-card strong {
   display: block;
   font-family: "Syne", sans-serif;
   font-weight: 800;
@@ -61,7 +61,7 @@
   margin-bottom: 0.5rem;
 }
 
-#mercado div div p {
+#mercado .estadistica-card p {
   font-family: "Lexend", sans-serif;
   font-weight: 400;
   color: #555555;
