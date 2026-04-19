@@ -49,6 +49,13 @@
   gap: 0.4rem;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  position: relative;
+}
+
+.card:hover{
+  transform: translateY(-12px); 
+  box-shadow: 0 15px 30px rgba(39, 125, 161, 0.15);
 }
 
 .numero {
