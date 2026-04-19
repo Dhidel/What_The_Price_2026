@@ -16,7 +16,8 @@
   color: #277da1;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem;
+  margin-top: 2rem;
 }
 
 #mercado h2 {
@@ -36,6 +37,7 @@
   font-size: 0.95rem;
   margin: 0 auto 2.5rem;
   max-width: 600px;
+  margin-top: 2rem;
 }
 
 #mercado .estadisticas-grid {

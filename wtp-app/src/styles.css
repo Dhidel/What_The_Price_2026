@@ -8,4 +8,5 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  scroll-padding-top: 25px;
 }

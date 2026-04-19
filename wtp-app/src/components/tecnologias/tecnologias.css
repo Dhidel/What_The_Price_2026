@@ -7,25 +7,13 @@
   padding: 4rem 2rem;
 }
 
-#tecnologias span {
-  display: block;
-  text-align: center;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: #277da1;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
-}
-
 #tecnologias h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
   font-weight: 800;
   color: #277da1;
   font-size: xx-large;
-  margin: 0 0 2rem;
+  margin: 1rem 0 2.5rem;
 }
 
 #tecnologias .tecnologias-grid {
@@ -40,6 +28,7 @@
   border-radius: 8px;
   padding: 1.25rem;
   box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+  margin-top: 1rem;
 }
 
 #tecnologias .tecnologia-card h5 {

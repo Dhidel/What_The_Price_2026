@@ -11,7 +11,8 @@ background-color: #277da1;
 .caption{
 grid-row: 1/2;
 text-align: center;
-margin-top: 2rem;
+margin-top: 3rem;
+
 }
 
 .caption span {
@@ -45,34 +46,5 @@ font-family: "Lexend", sans-serif;
 font-weight: 600;
 color: rgba(238, 236, 234, 0.95);
 margin-bottom: 2rem;
-}
-
-.buttons {
-  grid-row: 4/5;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.button {
-  font-family: "Lexend", sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-.button:first-child {
-  background-color: #ffffff;
-  color: #277da1;
-}
-
-.button:last-child {
-  background-color: transparent;
-  color: #ffffff;
-  border: 1.5px solid #ffffff;
+margin-bottom: 3.5rem;
 }
