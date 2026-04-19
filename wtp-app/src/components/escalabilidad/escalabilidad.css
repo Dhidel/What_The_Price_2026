@@ -94,3 +94,17 @@
   left: 0;
   color: rgba(238, 236, 234, 0.5);
 }
+
+@media (max-width: 768px) {
+  #escala {
+    padding: 2.5rem 1rem;
+  }
+
+  #escala div {
+    grid-template-columns: 1fr;
+  }
+
+  #escala h2 {
+    font-size: 1.6rem;
+  }
+}

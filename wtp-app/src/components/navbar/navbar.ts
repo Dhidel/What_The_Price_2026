@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { UpperCasePipe } from '@angular/common'; // ← agregás esto
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  imports: [UpperCasePipe],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
-
-}
+export class Navbar {}

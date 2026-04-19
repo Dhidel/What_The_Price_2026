@@ -68,3 +68,17 @@
   font-size: 0.9rem;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  #modelo {
+    padding: 2.5rem 1rem;
+  }
+
+  #modelo .ingresos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #modelo h2 {
+    font-size: 1.6rem;
+  }
+}

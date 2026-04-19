@@ -47,4 +47,29 @@ font-weight: 600;
 color: rgba(238, 236, 234, 0.95);
 margin-bottom: 2rem;
 margin-bottom: 3.5rem;
+padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .name h1 {
+    font-size: 2.5rem;
+  }
+
+  .eslogan p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name h1 {
+    font-size: 2rem;
+  }
+
+  .caption span {
+    font-size: 0.75rem;
+  }
 }
