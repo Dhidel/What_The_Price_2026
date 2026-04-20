@@ -1,0 +1,84 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#modelo {
+  background-color: #277da1;
+  padding: 4rem 2rem;
+}
+
+#modelo span {
+  display: block;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(238, 236, 234, 0.85);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 236, 234, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+  margin: 0.7rem auto 2rem;
+}
+
+#modelo h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: rgba(238, 236, 234, 0.95);
+  font-size: xx-large;
+  margin: 0 0 2.5rem;
+}
+
+#modelo .ingresos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+#modelo .ingreso-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 236, 234, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+}
+
+#modelo .ingreso-card:hover {
+  box-shadow: 0 0 25px rgba(67, 199, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(39, 125, 161, 0.1);
+}
+
+#modelo .ingreso-card h5 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: rgba(238, 236, 234, 0.95);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+#modelo .ingreso-card p {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: rgba(238, 236, 234, 0.776);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #modelo {
+    padding: 2.5rem 1rem;
+  }
+
+  #modelo .ingresos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #modelo h2 {
+    font-size: 1.6rem;
+  }
+}

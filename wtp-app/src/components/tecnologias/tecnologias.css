@@ -1,0 +1,90 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#tecnologias {
+  background-color: #F0F4F8;
+  padding: 4rem 2rem;
+}
+
+#tecnologias h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: #277da1;
+  font-size: xx-large;
+  margin: 1rem 0 2.5rem;
+}
+
+#tecnologias .tecnologias-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+#tecnologias .tecnologia-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+  margin-top: 1rem; 
+}
+
+#tecnologias .tecnologia-card h5 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: #277da1;
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+#tecnologias .tecnologia-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#tecnologias .tecnologia-card ul li {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+}
+
+#tecnologias p {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.95rem;
+  text-align: center;
+  margin: 0 auto 0.75rem;
+  max-width: 600px;
+}
+
+@media (max-width: 1024px) {
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #tecnologias {
+    padding: 2.5rem 1rem;
+  }
+
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #tecnologias h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #tecnologias .tecnologias-grid {
+    grid-template-columns: 1fr;
+  }
+}

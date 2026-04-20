@@ -1,0 +1,79 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import "@fontsource/syne/500.css";
+
+.navbar{
+ display: grid;
+ grid-template-columns: auto 1fr;
+ align-items: center;
+ background-color: #277da1;
+ position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.name{
+    grid-column: 1/2;
+    color: rgba(238, 236, 234, 0.95);
+    font-family: "Syne", sans-serif ;
+    font-weight: 500;
+    margin-left: 3rem;
+    font-size: larger;
+    margin-right: -1rem;
+}
+
+.nav{
+    display: grid;
+    grid-column: 2/3;
+    grid-template-columns: repeat(7, auto);
+    color: rgba(238, 236, 234, 0.95);
+    text-align: center;
+    margin-left: 7rem;
+    margin-right: 1rem;
+    font-family: "Syne", sans-serif;
+}
+
+a{
+    color: rgba(238, 236, 234, 0.95);
+    font-family: "Syne", sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    grid-template-columns: repeat(4, auto);
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    padding: 0.75rem 1rem;
+  }
+
+  .name {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .nav {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, auto);
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+}

@@ -1,0 +1,96 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import '@fontsource-variable/lexend/wght.css';
+
+#equipo {
+  background-color: #F0F4F8;
+  padding: 4rem 2rem;
+}
+
+#equipo h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  color: #277da1;
+  font-size: xx-large;
+  margin: 2rem 0 2.5rem;
+}
+
+#equipo .equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#equipo .miembro-card {
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(23, 7, 52, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#equipo .miembro-card:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(39, 125, 161, 0.2);
+}
+
+
+#equipo .miembro-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #277da1;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+#equipo .miembro-card h5 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: #277da1;
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+}
+
+#equipo .miembro-card p:first-of-type {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  color: #277da1;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+#equipo .miembro-card p:last-of-type {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  color: #555555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  #equipo {
+    padding: 2.5rem 1rem;
+  }
+
+  #equipo h2 {
+    font-size: 1.6rem;
+  }
+
+  #equipo .equipo-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
