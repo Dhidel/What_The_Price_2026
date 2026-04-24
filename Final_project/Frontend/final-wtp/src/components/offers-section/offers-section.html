@@ -1,1 +1,28 @@
-<p>offers-section works!</p>
+<div class="carousel">
+
+  <div class="ofertas"
+       *ngFor="let banner of banners; let i = index"
+       [class.active]="i === currentIndex">
+
+    <div class="contenido">
+      <h2>{{ banner.subtitle }}</h2>
+      <h1>{{ banner.title }}</h1>
+      <h2>{{ banner.descripcion }}</h2>
+      <button>Aquí</button>
+    </div>
+
+    <div class="imagen">
+      <img [src]="banner.img" alt="">
+    </div>
+
+  </div>
+
+  <div class="dots">
+    <span *ngFor="let b of banners; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="goTo(i)">
+    </span>
+  </div>
+
+</div>
