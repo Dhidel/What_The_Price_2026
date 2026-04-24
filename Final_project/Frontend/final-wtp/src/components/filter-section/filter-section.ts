@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './filter-section.css',
 })
 export class FilterSection {
-
+  
 }
