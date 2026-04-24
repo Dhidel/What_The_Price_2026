@@ -1,0 +1,99 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/500.css";
+
+.navbar {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  background-color: #277da1;
+  padding: 0.75rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1rem;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: rgba(238, 236, 234, 0.95);
+}
+
+.name h1 {
+  color: rgba(238, 236, 234, 0.95);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: rgba(238, 236, 234, 0.95);
+  font-family: "Syne", sans-serif;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.75;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-actions a {
+  color: rgba(238, 236, 234, 0.95);
+  font-family: "Syne", sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.nav-actions a:hover {
+  opacity: 0.75;
+}
+
+.btn-signup {
+  background-color: rgba(238, 236, 234, 0.15);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(238, 236, 234, 0.5);
+}
+
+.btn-signup:hover {
+  background-color: rgba(238, 236, 234, 0.25) !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .name h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
