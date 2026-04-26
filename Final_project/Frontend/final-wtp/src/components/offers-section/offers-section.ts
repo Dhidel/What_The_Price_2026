@@ -15,7 +15,7 @@ export class OffersSection implements OnInit {
   banners = [
     {
       img: 'images/iphone.png',
-      title: 'Iphone 17 pro max',
+      title: 'iPhone 17 pro max',
       subtitle: 'El mejor teléfono del año',
       descripcion: 'Oferta de verano'
     },

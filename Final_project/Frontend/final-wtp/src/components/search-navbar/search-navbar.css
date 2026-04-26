@@ -1,0 +1,138 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/500.css";
+
+.search-navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: #277da1;
+  padding: 0.75rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: rgba(238, 236, 234, 0.95);
+}
+
+.nav-brand {
+  color: rgba(238, 236, 234, 0.95);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  width: 420px;
+  background-color: #fff;
+  border: 1.5px solid transparent;
+  border-radius: 30px;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-wrapper:focus-within {
+  border-color: rgba(238, 236, 234, 0.6);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: #aab0bb;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #277da1;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #1e6485;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.nav-actions a {
+  color: rgba(238, 236, 234, 0.95);
+  font-family: "Syne", sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.nav-actions a:hover {
+  opacity: 0.75;
+}
+
+.btn-signup {
+  background-color: rgba(238, 236, 234, 0.15);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(238, 236, 234, 0.5);
+}
+
+.btn-signup:hover {
+  background-color: rgba(238, 236, 234, 0.25) !important;
+}
+
+@media (max-width: 768px) {
+  .search-navbar {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+}
