@@ -1,0 +1,114 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/500.css";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    font-family: "Syne", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #f5f7fa;
+}
+
+.tiendas, .precios, .productos {
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tiendas {
+    background: linear-gradient(145deg, #226b8a, #277da1);
+    color: white;
+}
+
+.precios, .productos {
+    background: white;
+    border: 1px solid #e1e8ed;
+}
+
+h2 {
+    font-family: "Syne", sans-serif;;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    
+}
+
+.boton-tienda, .presupuesto-chips, .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+}
+
+.tienda-item {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.9rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Syne", sans-serif;
+}
+
+.tienda-item:hover {
+    background: white;
+    color: #277da1;
+}
+
+.producto-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #475569;
+    transition: 0.2s;
+    font-family: "Syne", sans-serif;
+}
+
+.producto-item:hover {
+    background: #277da1;
+    color: white;
+}
+
+.rango-inputs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.rango-inputs input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: "Syne", sans-serif;
+}
+
+.chip {
+    border: 1.5px solid #277da1;
+    color: #277da1;
+    padding: 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: "Syne", sans-serif;
+}
+
+.chip:hover {
+    background: #277da1;
+    color: white;
+}
