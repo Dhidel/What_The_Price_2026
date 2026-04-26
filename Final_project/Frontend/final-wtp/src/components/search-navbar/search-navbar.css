@@ -13,28 +13,28 @@
   gap: 1rem;
 }
 
-.nav-left {
+.navbar-left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   justify-content: flex-start;
 }
 
-.hamburger {
+.menu-icon {
   display: flex;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
 }
 
-.hamburger span {
+.menu-icon span {
   display: block;
   width: 24px;
   height: 2px;
   background-color: rgba(238, 236, 234, 0.95);
 }
 
-.nav-brand {
+.navbar-logo {
   color: rgba(238, 236, 234, 0.95);
   font-family: "Syne", sans-serif;
   font-weight: 700;
@@ -42,7 +42,7 @@
   text-decoration: none;
 }
 
-.nav-center {
+.navbar-center {
   display: flex;
   justify-content: center;
 }
@@ -77,7 +77,7 @@
   color: #aab0bb;
 }
 
-.search-btn {
+.search-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,18 +92,18 @@
   transition: background-color 0.2s;
 }
 
-.search-btn:hover {
+.search-button:hover {
   background-color: #1e6485;
 }
 
-.nav-actions {
+.navbar-right {
   display: flex;
   align-items: center;
   gap: 1rem;
   justify-content: flex-end;
 }
 
-.nav-actions a {
+.navbar-right a {
   color: rgba(238, 236, 234, 0.95);
   font-family: "Syne", sans-serif;
   text-decoration: none;
@@ -111,18 +111,18 @@
   transition: opacity 0.2s;
 }
 
-.nav-actions a:hover {
+.navbar-right a:hover {
   opacity: 0.75;
 }
 
-.btn-signup {
+.signup-button {
   background-color: rgba(238, 236, 234, 0.15);
   padding: 0.3rem 0.9rem;
   border-radius: 20px;
   border: 1px solid rgba(238, 236, 234, 0.5);
 }
 
-.btn-signup:hover {
+.signup-button:hover {
   background-color: rgba(238, 236, 234, 0.25) !important;
 }
 
@@ -131,6 +131,7 @@
     grid-template-columns: auto 1fr auto;
     padding: 0.75rem 1rem;
   }
+
 
   .search-wrapper {
     width: 100%;
