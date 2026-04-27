@@ -1,0 +1,44 @@
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/500.css";
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: #24546a;
+    color: rgba(238, 236, 234, 0.95);
+    font-family: "Syne", sans-serif;
+    padding: 0.8rem 2rem;
+}
+
+.marca{
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.name{
+    text-align: center;
+}
+
+.name h2{
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contact{
+    text-align: right;
+}
+
+.contact a{
+    text-decoration: none;
+    color: rgba(238, 236, 234, 0.95);
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.contact a:hover {
+    opacity: 0.75;
+}

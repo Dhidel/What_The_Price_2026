@@ -1,0 +1,12 @@
+.container{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.page{
+    grid-row: 1/2;
+}
+
+.footer{
+    grid-row: 2/3;
+}
