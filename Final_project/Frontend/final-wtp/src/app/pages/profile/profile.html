@@ -1,0 +1,40 @@
+<app-search-navbar></app-search-navbar>
+<div class="page-container">
+  <!-- Si no se han registrado -->
+  <div class="auth-message" *ngIf="!isLoggedIn">
+    <div class="message-card">
+      <h2>Se tiene que registrar</h2>
+      <p>Para gestionar tu perfil y ver tu historial, por favor inicia sesión.</p>
+      <button class="btn-main" routerLink="/login">Ir al Login</button>
+    </div>
+  </div>
+
+  <!-- Si ya están registrados -->
+  <div class="profile-layout" *ngIf="isLoggedIn">
+    <div class="profile-sidebar">
+      <div class="avatar-container">
+        <img [src]="userPhoto" alt="Perfil">
+        <label for="file-upload" class="upload-label">
+          <span>+</span>
+        </label>
+        <input id="file-upload" type="file" (change)="onFileSelected($event)" hidden>
+      </div>
+      <h3>{{ userName }}</h3>
+      <p class="user-id">ID: #{{ userId }}</p>
+    </div>
+
+    <div class="profile-main">
+      <section class="history">
+        <h3>Historial de Búsquedas</h3>
+        <div class="history-item">
+          <span>iPhone 15 Pro Max</span>
+          <small>Hace 2 días</small>
+        </div>
+        <div class="history-item">
+          <span>Laptop Gamer HP</span>
+          <small>Hace 5 días</small>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

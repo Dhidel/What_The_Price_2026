@@ -1,6 +1,6 @@
 <header class="search-navbar">
   <div class="navbar-left">
-    <div class="menu-icon">
+    <div class="menu-icon" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
@@ -20,3 +20,24 @@
     <a routerLink="/register" class="signup-button">Sign up</a>
   </div>
 </header>
+
+<!-- Menú que aparecerá -->
+<div class="sidenav" [class.open]="isMenuOpen">
+  <div class="sidenav-header">
+    <span class="close-btn" (click)="toggleMenu()">&times;</span>
+  </div>
+  
+  <nav class="sidenav-content">
+    <a (click)="navigate('/favorites-page')">1) Favoritos</a>
+    <a (click)="navigate('/profile')">2) Perfil</a>
+    <a (click)="toggleAbout()">3) Nosotros</a>
+      <div class="about-text" *ngIf="showAboutText">
+        <p>What the price es una página para comparar los productos electronicos entre las páginas más reconocidas del país, con el enfoque de eficientizar la vida de los Guatemaltecos al momento de realizar una compra.</p>
+      </div>
+    <a (click)="contactWhatsApp()">4) Servicio al cliente</a>
+  </nav>
+</div>
+
+
+<!-- Overlay para cerrar el menú al hacer clic fuera -->
+<div class="overlay" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
