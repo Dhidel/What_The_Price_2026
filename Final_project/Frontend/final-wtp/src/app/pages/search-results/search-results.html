@@ -1,1 +1,52 @@
-<p>search-results works!</p>
+
+<div class="search-results-page">
+
+  <app-search-navbar></app-search-navbar>
+
+  <div class="search-results">
+
+    <!-- Título de la página con el término buscado (hardcodeado por ahora) -->
+    <h2 class="results-title">Resultados para: <span>"Apple"</span></h2>
+
+    <!-- Se muestra solo si la variable "cargando" es true
+         Desaparece cuando los datos del backend ya llegaron -->
+    <p *ngIf="cargando">Cargando productos...</p>
+
+    <!-- Se muestra solo si la variable "error" tiene algún mensaje
+         El mensaje de error viene del .ts cuando falla la conexión al backend -->
+    <p *ngIf="error" style="color: red;">{{ error }}</p>
+
+    <div class="products-grid">
+
+      <!-- *ngFor recorre el array "products" que vino del backend
+           Por cada producto crea una card automáticamente -->
+      <div class="product-card" *ngFor="let product of products">
+
+        <!-- Si el producto tiene imageUrl la muestra, si no muestra la imagen por defecto
+             [src] singifica que l valor viene de la variable, no está hardcodeado
+             [alt] significa dinámico: usa el nombre del producto -->
+        <img [src]="product.imageUrl || 'images/Noimage.jpg'" [alt]="product.name"/>
+
+        <div class="card-info">
+
+          <!-- {{ }}, muestra el valor de la variable en el HTML -->
+          <p class="product-name">{{ product.name }}</p>
+
+          <!-- prices[0] accede al primer precio del array
+               El ? es "optional chaining": si prices está vacío no lanza error -->
+          <p class="product-price">Q{{ product.prices[0]?.price }}</p>
+
+          <!-- Muestra la tienda del primer precio -->
+          <p class="product-store">{{ product.prices[0]?.store }}</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Se muestra solo si NO está cargando Y el array de productos está vacío
+         O sea cuando el backend respondió pero no hay productos guardados -->
+    <p *ngIf="!cargando && products.length === 0">No hay productos todavía.</p>
+
+  </div>
+</div>

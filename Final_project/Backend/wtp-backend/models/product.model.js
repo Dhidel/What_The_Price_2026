@@ -30,7 +30,6 @@ const productSchema = new mongoose.Schema({
       url: { type: String }
     }
   ]
-
 // timestamps: true = MongoDB agrega automáticamente
 // createdAt (cuándo se creó) y updatedAt (cuándo se editó)
 }, { timestamps: true });
