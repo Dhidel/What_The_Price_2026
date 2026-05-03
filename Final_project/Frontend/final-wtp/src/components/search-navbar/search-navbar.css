@@ -58,6 +58,7 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Cambia el color cuando se escribe */
 .search-wrapper:focus-within {
   border-color: rgba(238, 236, 234, 0.6);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
@@ -73,6 +74,7 @@
   background: transparent;
 }
 
+/* Cambia el color del texto */
 .search-input::placeholder {
   color: #aab0bb;
 }
@@ -92,6 +94,7 @@
   transition: background-color 0.2s;
 }
 
+/* Animación */
 .search-button:hover {
   background-color: #1e6485;
 }
@@ -111,6 +114,7 @@
   transition: opacity 0.2s;
 }
 
+/* Animación */
 .navbar-right a:hover {
   opacity: 0.75;
 }
@@ -122,6 +126,7 @@
   border: 1px solid rgba(238, 236, 234, 0.5);
 }
 
+/* Animación */
 .signup-button:hover {
   background-color: rgba(238, 236, 234, 0.25) !important;
 }
@@ -141,6 +146,7 @@
   transition: background-color 0.2s, transform 0.2s;
 }
 
+/* Animación */
 .icon-btn:hover {
   background-color: rgba(238, 236, 234, 0.25);
   transform: translateY(-1px);
@@ -192,6 +198,7 @@
   cursor: pointer;
 }
 
+/* Animación */
 .sidenav-content a:hover {
   opacity: 0.7;
 }

@@ -15,4 +15,5 @@ export const routes: Routes = [
     { path: 'profile', component: Profile},
     {path: 'register', component: RegisterPage},
     {path: 'login', component: LoginPage}
+    //Rutas de las páginas
 ];

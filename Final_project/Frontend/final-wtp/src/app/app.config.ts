@@ -11,4 +11,5 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes), provideClientHydration(withEventReplay())
   ]
+  //Aqui se habilitan los servicios globales de toda la app
 };

@@ -11,7 +11,7 @@ export class SearchBar {
   constructor(private router: Router) {}
 
   goToSearch() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/search']); //Navega entre rutas
   }
 
 }
