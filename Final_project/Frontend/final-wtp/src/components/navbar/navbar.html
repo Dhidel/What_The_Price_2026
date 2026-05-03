@@ -1,19 +1,53 @@
 <header class="navbar">
   <div class="nav-left">
-    <div class="hamburger">
+    <div class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <span class="nav-abreviado">WTP</span>
+
+    <span class="nav-abreviado" (click)="navigate('/')">WTP</span>
   </div>
 
   <div class="nav-center">
-    <h1>What The Price</h1>
+    <h1 (click)="navigate('/')">What The Price</h1>
   </div>
 
   <div class="nav-actions">
-    <a routerLink="/login">Log in</a>
-    <a routerLink="/register" class="btn-signup">Sign up</a>
+    <ng-container *ngIf="currentUser; else noUser">
+      <button class="icon-btn" (click)="navigate('/favorites-page')" aria-label="Favoritos" title="Favoritos">
+        ♡
+      </button>
+
+      <button class="icon-btn" (click)="navigate('/profile')" aria-label="Perfil" title="Perfil">
+        👤
+      </button>
+    </ng-container>
+
+    <ng-template #noUser>
+      <button class="btn-login-trigger" (click)="navigate('/register')">
+        Log in / Sign up
+      </button>
+    </ng-template>
   </div>
 </header>
+
+<div class="overlay" *ngIf="isMenuOpen" (click)="closeAllMenus()"></div>
+
+<div class="sidenav" [class.open]="isMenuOpen">
+  <div class="sidenav-header">
+    <span class="close-btn" (click)="toggleMenu()">&times;</span>
+  </div>
+
+  <nav class="sidenav-content">
+    <a (click)="navigate('/favorites-page')">1) Favoritos</a>
+    <a (click)="navigate('/profile')">2) Perfil</a>
+    <a (click)="toggleAbout()">3) Nosotros</a>
+
+    <div class="about-text" *ngIf="showAboutText">
+      <p>Comparador de productos electrónicos en Guatemala.</p>
+    </div>
+
+    <a (click)="contactWhatsApp()">4) Servicio al cliente</a>
+  </nav>
+</div>
