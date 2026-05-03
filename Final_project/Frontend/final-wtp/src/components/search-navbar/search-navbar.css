@@ -126,19 +126,37 @@
   background-color: rgba(238, 236, 234, 0.25) !important;
 }
 
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(238, 236, 234, 0.15);
+  color: rgba(238, 236, 234, 0.95);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
 
-/* Estilos para el Sidenav */
+.icon-btn:hover {
+  background-color: rgba(238, 236, 234, 0.25);
+  transform: translateY(-1px);
+}
+
 .sidenav {
   height: 100%;
   width: 280px;
   position: fixed;
   z-index: 2000;
   top: 0;
-  left: -280px; 
+  left: -280px;
   background-color: #277da1;
   transition: 0.3s;
   padding-top: 2rem;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   font-family: "Syne", sans-serif;
 }
 
@@ -203,7 +221,6 @@
     grid-template-columns: auto 1fr auto;
     padding: 0.75rem 1rem;
   }
-
 
   .search-wrapper {
     width: 100%;
