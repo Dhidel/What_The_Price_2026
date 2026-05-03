@@ -39,6 +39,7 @@
     transition: opacity 0.2s;
 }
 
+/* Animación */
 .contact a:hover {
     opacity: 0.75;
 }

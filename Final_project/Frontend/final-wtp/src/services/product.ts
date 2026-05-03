@@ -1,9 +1,7 @@
-
 import { Injectable } from '@angular/core';
 
 // HttpClient es lo que se usa para hacer peticiones HTTP (GET, POST, DELETE, etc.)
 import { HttpClient } from '@angular/common/http';
-
 
 import { Observable } from 'rxjs';
 
@@ -31,21 +29,17 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   // GET /api/products (obtiene todos los productos)
-  // Devuelve un Observable con un array de Products
-  // El componente debe hacer .subscribe() para recibir los datos
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
   // POST /api/products (crea un producto nuevo)
-  // Recibe un Product y lo manda al backend en el body
   createProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
   }
 
   // DELETE /api/products/:id (elimina un producto por su id)
-  // El id viene del _id que generó MongoDB
   deleteProduct(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-}
+} 

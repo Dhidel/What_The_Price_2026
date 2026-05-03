@@ -1,0 +1,52 @@
+<app-search-navbar></app-search-navbar>
+
+<div class="page-container">
+  <div class="profile-wrapper" *ngIf="user; else noUser">
+    <section class="profile-card">
+      <div class="profile-header">
+        <div class="profile-badge">Perfil</div>
+        <h1>Bienvenido, {{ user.name }}</h1> 
+        <!-- Se usa el service -->
+        <p class="subtitle">Aquí están los datos de tu cuenta registrada.</p>
+      </div>
+
+      <div class="profile-info">
+        <div class="info-item">
+          <span class="label">ID</span>
+          <span class="value">#{{ user.id }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Nombre</span>
+          <span class="value">{{ user.name }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Plan</span>
+          <span class="value plan">{{ user.plan }}</span>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <button class="btn-main" (click)="logout()" routerLink="/login">
+          Cerrar sesión
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <ng-template #noUser>
+    <div class="empty-state">
+      <section class="empty-card">
+        <div class="empty-icon">!</div>
+        <h2>No tienes un usuario creado</h2>
+        <p>
+          Tienes que registrarte o iniciar sesión para ver tu perfil.
+        </p>
+        <button class="btn-main" routerLink="/register">
+          Ir al Login
+        </button>
+      </section>
+    </div>
+  </ng-template>
+</div>
