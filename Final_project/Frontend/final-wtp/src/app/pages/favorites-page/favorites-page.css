@@ -1,3 +1,4 @@
+
 .page-container {
   padding: 2rem;
   font-family: "Syne", sans-serif;
@@ -29,6 +30,7 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Animación */
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
@@ -81,6 +83,7 @@
   cursor: pointer;
 }
 
+/* Animación */
 .remove-fav:hover {
   color: #e76f51;
 }

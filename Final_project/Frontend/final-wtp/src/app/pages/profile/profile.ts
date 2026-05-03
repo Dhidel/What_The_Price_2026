@@ -12,16 +12,16 @@ import { UserService, User } from '../../services/user';
   styleUrl: './profile.css',
 })
 export class Profile implements OnInit {
-  user: User | null = null;
+  user: User | null = null; //Cuando no hay nadie logueado
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {} //Aquí se imyecta el servicio
 
   ngOnInit(): void {
-    this.user = this.userService.getUserLocal();
+    this.user = this.userService.getUserLocal(); //Revisa si ya hay algún usuario guardado
   }
 
   logout(): void {
     this.userService.logout();
-    this.user = null;
+    this.user = null;//Se limían los datos
   }
 }

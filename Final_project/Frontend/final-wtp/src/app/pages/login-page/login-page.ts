@@ -14,7 +14,7 @@ import { UserService, User } from '../../services/user';
 export class LoginPage {
   userData = {
     name: '',
-    contrasena: '',
+    contrasena: '', //Variables para el log in
   };
 
   errorMessage = '';
@@ -22,7 +22,7 @@ export class LoginPage {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService // Inyector de dependencias
   ) {}
 
   onSubmit(): void {
@@ -31,7 +31,7 @@ export class LoginPage {
     if (!this.userData.name || !this.userData.contrasena) {
       this.errorMessage = 'Por favor, llena todos los campos.';
       return;
-    }
+    } //Mensaje de error
 
     this.loading = true;
 
@@ -39,16 +39,16 @@ export class LoginPage {
       next: (user: User) => {
         this.userService.setUser(user);
         this.loading = false;
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/profile']); //Valida el usuario
       },
       error: () => {
         this.loading = false;
         this.errorMessage = 'Nombre o contraseña incorrectos.';
-      },
+      }, //Si no es valido el usuario tira un mensaje de error
     });
   }
 
   navigate(path: string): void {
-    this.router.navigate([path]);
+    this.router.navigate([path]); //Navega entre rutas
   }
 }
