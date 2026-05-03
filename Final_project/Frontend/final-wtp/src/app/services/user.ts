@@ -15,45 +15,45 @@ export interface User {
 })
 export class UserService {
   private apiUrl = 'http://localhost:3004/users';
-  private loginUrl = 'http://localhost:3004/login';
+  private loginUrl = 'http://localhost:3004/login'; //Se definen las rutas
 
   constructor(
     private http: HttpClient,
-    @Inject(PLATFORM_ID) private platformId: object
+    @Inject(PLATFORM_ID) private platformId: object //Inyección
   ) {}
 
   getUser(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
+    return this.http.get<User>(`${this.apiUrl}/${id}`); //Llamar un usuario específico
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(this.apiUrl); //LLama a todos los usuarios
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>(this.apiUrl, user); //Usa el post para crear un usuario
   }
 
   login(name: string, contrasena: string): Observable<User> {
-    return this.http.post<User>(this.loginUrl, { name, contrasena });
+    return this.http.post<User>(this.loginUrl, { name, contrasena }); //Valida los usuarios para el log in
   }
 
   updateUser(id: number, data: Partial<User>): Observable<User> {
-    return this.http.patch<User>(`${this.apiUrl}/${id}`, data);
+    return this.http.patch<User>(`${this.apiUrl}/${id}`, data);  //Patch para actualizar datos (Falta implementar en el perfil)
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+    return this.http.delete<any>(`${this.apiUrl}/${id}`); //Delete para borrar usuario (Falata implementar
   }
 
   setUser(user: User): void {
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('user', JSON.stringify(user)); //Guarda el usuario logueado
     }
   }
 
   getUserLocal(): User | null {
-    if (!isPlatformBrowser(this.platformId)) {
+    if (!isPlatformBrowser(this.platformId)) { //Lee el usuario guardado
       return null;
     }
 
@@ -63,12 +63,12 @@ export class UserService {
 
   logout(): void {
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.removeItem('user');
+      localStorage.removeItem('user'); //Borra el usuario guardado
     }
   }
 
   isLoggedIn(): boolean {
-    if (!isPlatformBrowser(this.platformId)) {
+    if (!isPlatformBrowser(this.platformId)) { //Define si hay usuario guardado 
       return false;
     }
     return !!localStorage.getItem('user');
