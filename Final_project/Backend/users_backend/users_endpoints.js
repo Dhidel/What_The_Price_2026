@@ -1,23 +1,26 @@
+//Importando librerías
 const express = require('express');
 const cors = require('cors');
 
-const app = express();
-const PORT = 3004;
+const app = express(); //Ponerle nombre a la constante con las especificaciones de express
+const PORT = 3004; //El puerto 
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); //Para aceptar peticiones
+app.use(express.json()); //Leer los archivos en formato json
 
-let users = [
+let users = [ //Una base de datos en memoria con los valores básicos (Para mejor funcionamiento luego se agregará Gmail y Foto)
   { id: 1, name: 'Dhidel Osorio', plan: 'plus', contrasena: '101010' },
   { id: 2, name: 'Sofía Bilbao', plan: 'basic', contrasena: '111111' },
 ];
 
-let nextId = 3;
+let nextId = 3; //Hardcodeado para las pruebas
 
+//GET - Todo
 app.get('/users', (req, res) => {
   res.json(users);
 });
 
+//GET - Por Id
 app.get('/users/:id', (req, res) => {
   const user = users.find(u => u.id === parseInt(req.params.id));
 
@@ -31,9 +34,10 @@ app.get('/users/:id', (req, res) => {
   });
 });
 
+//POST - Para crear un nuevo usuario
 app.post('/users', (req, res) => {
   console.log('POST /users llegó');
-  console.log('Body recibido:', req.body);
+  console.log('Body recibido:', req.body); //Para imprimir en la consola (Para pruebas)
 
   const { name, plan, contrasena } = req.body;
 
@@ -52,6 +56,7 @@ app.post('/users', (req, res) => {
   res.status(201).json(newUser);
 });
 
+//POST - Para validar el log in
 app.post('/login', (req, res) => {
   const { name, contrasena } = req.body;
 
@@ -69,6 +74,7 @@ app.post('/login', (req, res) => {
   });
 });
 
+//PATCH - Para editar cosas de la base de datos (Se implementará en el futúro para editar en el profile-page)
 app.patch('/users/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = users.findIndex(u => u.id === id);
@@ -89,6 +95,7 @@ app.patch('/users/:id', (req, res) => {
   res.json(users[index]);
 });
 
+//DELETE - Elimina un usuario (Se implementará en la hamburguer-bar para eliminar un usuario)
 app.delete('/users/:id', (req, res) => {
   const index = users.findIndex(u => u.id === parseInt(req.params.id));
 
@@ -100,6 +107,7 @@ app.delete('/users/:id', (req, res) => {
   res.json({ message: 'Usuario eliminado', user: deletedUser });
 });
 
+//Aquí se levanta el servidor con el puerto que pusimos
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

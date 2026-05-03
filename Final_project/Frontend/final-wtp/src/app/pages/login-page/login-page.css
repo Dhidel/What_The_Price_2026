@@ -1,6 +1,7 @@
 @import "@fontsource/syne/700.css";
 @import "@fontsource/syne/500.css";
 
+/* Host es el componente en sí mismo */
 :host {
   display: block;
   min-height: 100vh;
@@ -89,6 +90,7 @@
   box-sizing: border-box;
 }
 
+/* Cambia cuando el usuario está escribiendo */
 .input-group input:focus {
   outline: none;
   border-color: #277da1;
@@ -119,12 +121,14 @@
   box-shadow: 0 4px 12px rgba(39, 125, 161, 0.2);
 }
 
+/* Animación */
 .btn-login:hover {
   transform: translateY(-1px);
   opacity: 0.95;
   box-shadow: 0 8px 18px rgba(39, 125, 161, 0.28);
 }
 
+/* Se comporta como un botón que no se puede usar */
 .btn-login:disabled {
   opacity: 0.7;
   cursor: not-allowed;
@@ -146,6 +150,7 @@
   margin-left: 0.3rem;
 }
 
+/* Animación */
 .login-footer a:hover {
   text-decoration: underline;
 }

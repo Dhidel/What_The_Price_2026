@@ -18,31 +18,32 @@ export class RegisterPage {
     contrasena: ''
   };
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) {} //Se inyecta el servicio
 
 onSubmit(): void {
   console.log('entró al submit');
-  console.log('userData:', this.userData);
+  console.log('userData:', this.userData); //Solo para poner en la consola para pruebas
 
   if (!this.userData.name || !this.userData.plan || !this.userData.contrasena) {
     alert('Por favor, llena todos los campos');
     return;
-  }
+  } //Valida que se llenen los campos necesarios
 
-  console.log('antes del POST');
+  console.log('antes del POST'); //Para pruebas en consolas
 
   this.userService.createUser(this.userData).subscribe({
     next: (res: User) => {
       console.log('Usuario creado con éxito', res);
       alert('¡Registro exitoso!');
       this.router.navigate(['/login']);
-    },
+    }, //Cuando los datos son correctos
+
     error: (err: any) => {
       console.error('Error al registrar:', err);
       console.error('error body:', err?.error);
       alert('Hubo un error al crear la cuenta.');
     }
-  });
+  }); //Cuando no se pudo crear la cuenta
 
   this.userService.createUser(this.userData).subscribe({
   next: (res: User) => {
@@ -58,6 +59,6 @@ onSubmit(): void {
 }
 
   navigate(path: string): void {
-    this.router.navigate([path]);
+    this.router.navigate([path]); //Para navegar entre rutas
   }
 }

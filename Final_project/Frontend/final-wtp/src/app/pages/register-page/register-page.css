@@ -1,6 +1,7 @@
 @import "@fontsource/syne/700.css";
 @import "@fontsource/syne/500.css";
 
+/* Host es el componente en sí */
 :host {
   display: block;
   min-height: 100vh;
@@ -90,6 +91,7 @@
   box-sizing: border-box;
 }
 
+/* Animación cuando se escribe */
 .input-group input:focus,
 .input-group select:focus {
   outline: none;
@@ -114,12 +116,14 @@
   box-shadow: 0 4px 12px rgba(39, 125, 161, 0.2);
 }
 
+/* Animación */
 .btn-register:hover {
   transform: translateY(-1px);
   opacity: 0.95;
   box-shadow: 0 8px 18px rgba(39, 125, 161, 0.28);
 }
 
+/* Animación cuando el usuario está haciendo click */
 .btn-register:active {
   transform: translateY(0);
 }
@@ -139,6 +143,7 @@
   margin-left: 0.3rem;
 }
 
+/* Animación */
 .register-footer a:hover {
   text-decoration: underline;
 }
