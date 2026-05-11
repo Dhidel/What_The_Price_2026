@@ -23,7 +23,7 @@ export interface Product {
 export class ProductService {
 
   // URL base del backend: apunta a la API local
-  private apiUrl = 'http://localhost:3000/api/products';
+  private apiUrl = 'https://what-the-price-2026.onrender.com/api/products';
 
   // Inyecta HttpClient para poder usarlo en los métodos
   constructor(private http: HttpClient) {}
