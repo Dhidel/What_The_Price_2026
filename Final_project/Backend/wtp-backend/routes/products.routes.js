@@ -2,11 +2,17 @@ const express = require('express');
 const router = express.Router(); // En vez de app, usa router porque es un archivo separado
 const Product = require('../models/product.model'); // Importa el modelo de producto
 
-// GET /api/products  (devuelve TODOS los productos)
+// GET /api/products  (devuelve todos los productos, o filtra por ?name=...)
 router.get('/', async (req, res) => {
   try {
-    const products = await Product.find(); // busca todo en MongoDB
-    res.json(products); // devuelve los productos en JSON
+    const { name } = req.query;
+
+    const filter = name
+      ? { name: { $regex: name, $options: 'i' } }
+      : {};
+
+    const products = await Product.find(filter);
+    res.json(products);
   } catch (err) {
     res.status(500).json({ error: 'Error al obtener productos' });
   }
