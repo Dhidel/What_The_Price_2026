@@ -6,15 +6,13 @@
       <div class="profile-header">
         <div class="profile-badge">Perfil</div>
         <h1>Bienvenido, {{ user.name }}</h1> 
-        <!-- Se usa el service -->
         <p class="subtitle">Aquí están los datos de tu cuenta registrada.</p>
       </div>
 
       <div class="profile-info">
         <div class="info-item">
-          <span class="label">ID</span>
-          <span class="value">#{{ user.id }}</span>
-        </div>
+          <span class="label">ID de Usuario</span>
+          <span class="value">#{{ user.user_id }}</span> </div>
 
         <div class="info-item">
           <span class="label">Nombre</span>
@@ -22,8 +20,12 @@
         </div>
 
         <div class="info-item">
-          <span class="label">Plan</span>
-          <span class="value plan">{{ user.plan }}</span>
+          <span class="label">Correo electrónico</span>
+          <span class="value">{{ user.gmail }}</span> </div>
+
+        <div class="info-item">
+          <span class="label">Plan actual</span>
+          <span class="value plan" [ngClass]="user.plan">{{ user.plan | uppercase }}</span>
         </div>
       </div>
 
@@ -31,21 +33,32 @@
         <button class="btn-main" (click)="logout()" routerLink="/login">
           Cerrar sesión
         </button>
+        
+        <button class="btn-danger" (click)="toggleDeleteModal()">
+          Eliminar mi cuenta
+        </button>
       </div>
     </section>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showDeleteModal">
+    <div class="modal-content">
+      <h3>¿Estás completamente seguro?</h3>
+      <p>Esta acción es irreversible. Se borrarán todos tus datos de <strong>What The Price</strong>.</p>
+      <div class="modal-buttons">
+        <button class="btn-secondary" (click)="toggleDeleteModal()">Cancelar</button>
+        <button class="btn-confirm-delete" (click)="confirmDelete()">Sí, eliminar cuenta</button>
+      </div>
+    </div>
   </div>
 
   <ng-template #noUser>
     <div class="empty-state">
       <section class="empty-card">
         <div class="empty-icon">!</div>
-        <h2>No tienes un usuario creado</h2>
-        <p>
-          Tienes que registrarte o iniciar sesión para ver tu perfil.
-        </p>
-        <button class="btn-main" routerLink="/register">
-          Ir al Login
-        </button>
+        <h2>No tienes un usuario activo</h2>
+        <p>Inicia sesión para gestionar tu cuenta.</p>
+        <button class="btn-main" routerLink="/register">Ir al Login</button>
       </section>
     </div>
   </ng-template>

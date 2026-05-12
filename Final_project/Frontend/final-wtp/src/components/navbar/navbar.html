@@ -5,7 +5,6 @@
       <span></span>
       <span></span>
     </div>
-
     <span class="nav-abreviado" (click)="navigate('/')">WTP</span>
   </div>
 
@@ -19,8 +18,8 @@
         ♡
       </button>
 
-      <button class="icon-btn" (click)="navigate('/profile')" aria-label="Perfil" title="Perfil">
-        👤
+      <button class="icon-btn profile-btn" (click)="navigate('/profile')" aria-label="Perfil" title="Perfil">
+        👤 <span class="user-display-name">{{ currentUser.name }}</span>
       </button>
     </ng-container>
 
@@ -36,18 +35,25 @@
 
 <div class="sidenav" [class.open]="isMenuOpen">
   <div class="sidenav-header">
+    <span *ngIf="currentUser" class="welcome-msg">Hola, {{ currentUser.name }}</span>
     <span class="close-btn" (click)="toggleMenu()">&times;</span>
   </div>
 
   <nav class="sidenav-content">
-    <a (click)="navigate('/favorites-page')">1) Favoritos</a>
-    <a (click)="navigate('/profile')">2) Perfil</a>
-    <a (click)="toggleAbout()">3) Nosotros</a>
+    <ng-container *ngIf="currentUser">
+      <a (click)="navigate('/favorites-page')">1) Mis Favoritos</a>
+      <a (click)="navigate('/profile')">2) Mi Perfil</a>
+    </ng-container>
 
+    <a *ngIf="!currentUser" (click)="navigate('/register')">1) Iniciar Sesión / Registro</a>
+
+    <a (click)="toggleAbout()">3) Sobre Nosotros</a>
     <div class="about-text" *ngIf="showAboutText">
-      <p>Comparador de productos electrónicos en Guatemala.</p>
+      <p>Comparador de productos electrónicos líder en Guatemala.</p>
     </div>
 
     <a (click)="contactWhatsApp()">4) Servicio al cliente</a>
+    
+    <a *ngIf="currentUser" (click)="logout()" class="logout-link">5) Cerrar Sesión</a>
   </nav>
 </div>

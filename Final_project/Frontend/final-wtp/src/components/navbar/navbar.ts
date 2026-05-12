@@ -32,12 +32,15 @@ export class Navbar implements OnInit, OnDestroy {
         .pipe(filter(event => event instanceof NavigationEnd))
         .subscribe(() => {
           this.refreshUser();//Carga usuarios aunque cambie de ruta 
+          this.closeAllMenus(); //Cierra los menús
         });
     }
   }
 
   ngOnDestroy(): void {
-    this.routerSub?.unsubscribe(); //Sirve para desactivar los componentes caundo se sale de ellos
+    if (this.routerSub){
+      this,this.routerSub.unsubscribe()
+    } //Sirve para desactivar los componentes caundo se sale de ellos
   }
 
   refreshUser(): void {
@@ -50,6 +53,7 @@ export class Navbar implements OnInit, OnDestroy {
 
   closeAllMenus(): void {
     this.isMenuOpen = false; //Cierra el menú
+    this.showAboutText = false; //Cierra el texto
   }
 
   navigate(path: string): void {
