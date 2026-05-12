@@ -26,26 +26,8 @@ export class Profile implements OnInit {
 
   logout(): void {
     this.userService.logout();
-    this.user = null;//Se limían los datos
+    this.user = null;//Se elimían los datos
   }
 
-  toggleDeleteModal(): void { //Muestra el menú de confirmación
-    this.showDeleteModal = !this.showDeleteModal;
-  }
-
-  confirmDelete(): void {
-    if (this.user && this.user._id) {
-     this.userService.deleteUser(this.user._id).subscribe({
-        next: () => {
-          alert('Tu cuenta ha sido eliminada correctamente.');
-          this.logout();
-          this.router.navigate(['/register']);
-        },
-        error: (err) => {
-          console.error('Error al borrar cuenta:', err);
-          alert('No se pudo eliminar la cuenta. Inténtalo más tarde.');
-        }
-      });
-    }
-  }
+  // En el futuro se implementará aquí una opción para eliminar y para editar el perfil
 }
