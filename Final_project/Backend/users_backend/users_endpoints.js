@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express(); //Ponerle nombre a la constante con las especificaciones de express
 const PORT = process.env.PORT || 3006; //El puerto 
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI) //Aqui conectamos el backend con la base de datos
   .then(() => console.log('✅ Conectado a MongoDB Atlas'))
   .catch(err => console.error('❌ Error de conexión:', err));
 
@@ -17,9 +17,9 @@ app.use(cors()); //Para aceptar peticiones
 app.use(express.json()); //Leer los archivos en formato json
 
 //GET - Todo
-app.get('/users', async (req, res) => {
+app.get('/users', async (req, res) => { //Async es para obtener una promesa
   try{
-    const allUsers = await User.find() //Busca todo en la colección
+    const allUsers = await User.find() //Busca todo en la colección, away es para detener cuando la promesa se cumpla o falle
     res.json(allUsers);
   }
   catch (error) {
@@ -30,14 +30,14 @@ app.get('/users', async (req, res) => {
 
 //POST - Para crear un nuevo usuario
 app.post('/users', async (req, res) => {
-  const { name, plan, password, gmail } = req.body;
+  const { name, plan, password, gmail } = req.body; // Es el esquema o body que se debe cuplir
 
   if (!name || !password || !gmail) {
     return res.status(400).json({ error: 'Faltan datos obligatorios' });
   }
 
   try {
-    const newUser = new User({ name, plan, password, gmail });
+    const newUser = new User({ name, plan, password, gmail }); // Te pide el esquema
     await newUser.save();
     res.status(201).json(newUser);
   } catch (error) {
@@ -51,7 +51,7 @@ app.post('/users', async (req, res) => {
     }
 
     return res.status(500).json({
-      error: 'Error al registrar usuario',
+      error: 'Error al registrar usuario', // Errores con más especificaciones para saber exactamente que pasó
       detalle: error.message,
       code: error.code
     });
@@ -89,10 +89,10 @@ app.patch('/users/:user_id', async (req, res) => {
     const updatedUser = await User.findOneAndUpdate(
       { user_id: parseInt(user_id) }, 
       { 
-        $set: { 
+        $set: {  // Operador de mongo que indica qué datos debe cambiar 
           ...(name && { name }),
           ...(plan && { plan }),
-          ...(password && { password }),
+          ...(password && { password }), // Condiciones de control 
           ...(gmail && { gmail })
         } 
       },

@@ -17,8 +17,8 @@ export class LoginPage {
     password: '', //Variables para el log in
   };
 
-  errorMessage = '';
-  loading = false;
+  errorMessage = ''; // Variables para posibles fallos
+  loading = false; // Variable para lo que se muestra en el boton segun lo que se pida
 
   constructor(
     private router: Router,

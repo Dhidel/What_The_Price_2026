@@ -27,9 +27,9 @@ export class SearchNavbar implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.refreshUser();
 
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) { // Evita que truene cuando algunas herramientas del navegador no esten en el servidor
       this.routerSub = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd))
+        .pipe(filter(event => event instanceof NavigationEnd)) //Tuberia donde se filtran los datos
         .subscribe(() => {
           this.refreshUser();
           this.isMenuOpen = false; // Cerramos el menú al navegar

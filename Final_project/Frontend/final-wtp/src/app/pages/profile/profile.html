@@ -24,28 +24,12 @@
           <span class="value plan" [ngClass]="user.plan">{{ user.plan | uppercase }}</span>
         </div>
       </div>
-
       <div class="profile-actions">
         <button class="btn-main" (click)="logout()" routerLink="/login">
           Cerrar sesión
         </button>
-        
-        <button class="btn-danger" (click)="toggleDeleteModal()">
-          Eliminar mi cuenta
-        </button>
       </div>
     </section>
-  </div>
-
-  <div class="modal-overlay" *ngIf="showDeleteModal">
-    <div class="modal-content">
-      <h3>¿Estás completamente seguro?</h3>
-      <p>Esta acción es irreversible. Se borrarán todos tus datos de <strong>What The Price</strong>.</p>
-      <div class="modal-buttons">
-        <button class="btn-secondary" (click)="toggleDeleteModal()">Cancelar</button>
-        <button class="btn-confirm-delete" (click)="confirmDelete()">Sí, eliminar cuenta</button>
-      </div>
-    </div>
   </div>
 
   <ng-template #noUser>
