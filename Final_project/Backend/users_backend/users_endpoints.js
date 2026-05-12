@@ -30,16 +30,18 @@ app.get('/users', async (req, res) => {
 
 //POST - Para crear un nuevo usuario
 app.post('/users', async (req, res) => {
+  const { name, plan, password, gmail } = req.body;
+
+  if (!name || !password || !gmail) {
+    return res.status(400).json({ error: 'Faltan datos obligatorios' });
+  }
+
   try {
-    const newUser = new User(req.body);
-    await newUser.save();
+    const newUser = new User({ name, plan, password, gmail });
+    await newUser.save(); // Guarda en Atlas
     res.status(201).json(newUser);
   } catch (error) {
-    console.error("Error detallado:", error);
-    res.status(400).json({ 
-      error: 'Error de validación', 
-      detalle: error.message 
-    });
+    res.status(400).json({ error: 'El ID o el correo ya existen' });
   }
 });
 
