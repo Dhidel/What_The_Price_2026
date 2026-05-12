@@ -34,8 +34,8 @@ export class Profile implements OnInit {
   }
 
   confirmDelete(): void {
-    if (this.user && this.user.user_id) {
-      this.userService.deleteUser(this.user.user_id).subscribe({
+    if (this.user && this.user._id) {
+     this.userService.deleteUser(this.user._id).subscribe({
         next: () => {
           alert('Tu cuenta ha sido eliminada correctamente.');
           this.logout();
