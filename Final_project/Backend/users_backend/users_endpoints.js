@@ -38,10 +38,23 @@ app.post('/users', async (req, res) => {
 
   try {
     const newUser = new User({ name, plan, password, gmail });
-    await newUser.save(); // Guarda en Atlas
+    await newUser.save();
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ error: 'El ID o el correo ya existen' });
+    console.error('REGISTER ERROR:', error);
+
+    if (error.code === 11000) {
+      return res.status(409).json({
+        error: 'El correo ya existe',
+        keyValue: error.keyValue
+      });
+    }
+
+    return res.status(500).json({
+      error: 'Error al registrar usuario',
+      detalle: error.message,
+      code: error.code
+    });
   }
 });
 
