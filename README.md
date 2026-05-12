@@ -57,4 +57,4 @@ Asistente IA: Integración de Inteligencia Artificial que analiza y explica cuá
 # Acciones de Usuario
 Compra: Enlace directo para proceder a la adquisición del producto.
 
-Favoritos: Opción para marcar productos y verlos posteriormente en la ruta correspondiente.
+Favoritos: Es una opción para marcar productos y verlos posteriormente en la ruta correspondiente.
