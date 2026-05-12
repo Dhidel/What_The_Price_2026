@@ -84,6 +84,12 @@
   margin: 0;
 }
 
+.loading-text {
+  font-family: "Syne", sans-serif;
+  font-weight: 500;
+  color: #1a1a2e;
+}
+
 @media (max-width: 600px) {
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

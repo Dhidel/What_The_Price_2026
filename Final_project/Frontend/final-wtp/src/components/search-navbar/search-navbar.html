@@ -10,8 +10,14 @@
 
   <div class="navbar-center">
     <div class="search-wrapper">
-      <input class="search-input" type="text" placeholder="Search" />
-      <button class="search-button" aria-label="Search">🔍</button>
+      <input
+        class="search-input"
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+      />
+      <button class="search-button" aria-label="Search" (click)="onSearch()">🔍</button>
     </div>
   </div>
 

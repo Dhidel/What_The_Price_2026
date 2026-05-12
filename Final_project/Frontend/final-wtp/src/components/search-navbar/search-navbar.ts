@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core'; 
+import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common'; 
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { filter, Subscription } from 'rxjs';
 import { UserService, User } from '../../app/services/user';
 
 @Component({
   standalone: true,
   selector: 'app-search-navbar',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './search-navbar.html',
   styleUrl: './search-navbar.css',
 })
@@ -59,10 +60,21 @@ export class SearchNavbar implements OnInit, OnDestroy {
   }
 
   contactWhatsApp(): void {
-    if (isPlatformBrowser(this.platformId)) { //Protege la llamada a window
+    if (isPlatformBrowser(this.platformId)) {
       const msg = encodeURIComponent('Hola, necesito asistencia técnica en WTP');
       window.open(`https://wa.me/50254308032?text=${msg}`, '_blank');
     }
     this.isMenuOpen = false;
+  }
+
+  searchQuery = '';
+
+  onSearch(): void {
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/search'], {
+        queryParams: { name: this.searchQuery }
+      });
+      this.searchQuery = '';
+    }
   }
 }

@@ -28,9 +28,10 @@ export class ProductService {
   // Inyecta HttpClient para poder usarlo en los métodos
   constructor(private http: HttpClient) {}
 
-  // GET /api/products (obtiene todos los productos)
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+  // GET /api/products (obtiene todos los productos, filtra por name si se pasa)
+  getProducts(name?: string): Observable<Product[]> {
+    const url = name ? `${this.apiUrl}?name=${name}` : this.apiUrl;
+    return this.http.get<Product[]>(url);
   }
 
   // POST /api/products (crea un producto nuevo)

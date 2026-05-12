@@ -6,11 +6,11 @@
   <div class="search-results">
 
     <!-- Título de la página con el término buscado (hardcodeado por ahora) -->
-    <h2 class="results-title">Resultados para: <span>"Apple"</span></h2>
+    <h2 class="results-title">Resultados para: <span>"{{ searchTerm }}"</span></h2>
 
     <!-- Se muestra solo si la variable "cargando" es true
          Desaparece cuando los datos del backend ya llegaron -->
-    <p *ngIf="cargando">Cargando productos...</p>
+    <p *ngIf="cargando" class="loading-text">Cargando productos...</p>
 
     <!-- Se muestra solo si la variable "error" tiene algún mensaje
          El mensaje de error viene del .ts cuando falla la conexión al backend -->
