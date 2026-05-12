@@ -115,3 +115,44 @@ h2 {
     background: #277da1;
     color: white;
 }
+
+/* Tablets y Laptops pequeñas*/
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 1.5rem;
+    }
+}
+
+/* Celulares grandes  */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .boton-tienda, .presupuesto-chips, .productos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+    .boton-tienda, .presupuesto-chips, .productos-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .rango-inputs {
+        flex-direction: column; 
+    }
+
+    .tienda-item, .producto-item, .chip {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

@@ -110,3 +110,86 @@
   background-color: white;
   transform: scale(1.2);
 }
+
+/* --- Media Queries para el Carrusel --- */
+
+/* Tablets (Máximo 1024px) */
+@media (max-width: 1024px) {
+  .carousel {
+    height: 500px; /* Aumentamos un poco la altura para dar aire */
+  }
+
+  .ofertas {
+    left: 2rem;
+    right: 2rem;
+    padding: 0 2rem;
+    grid-template-columns: 1fr 1fr; /* Equilibramos las columnas */
+  }
+
+  .contenido h1 {
+    font-size: 50px; /* Reducimos el tamaño de la fuente */
+  }
+}
+
+/* Celulares (Máximo 768px) */
+@media (max-width: 768px) {
+  .carousel {
+    height: 550px; /* Ajuste para que quepa el contenido apilado */
+    margin-bottom: 2rem;
+  }
+
+  .ofertas {
+    left: 1rem;
+    right: 1rem;
+    padding: 2rem;
+    grid-template-columns: 1fr; /* APILADO VERTICAL */
+    text-align: center;
+    justify-items: center;
+  }
+
+  .contenido {
+    align-items: center; /* Centramos el texto y el botón */
+    order: 2; /* El texto pasa abajo de la imagen */
+  }
+
+  .contenido h1 {
+    font-size: 40px;
+    margin: 0.5rem 0;
+  }
+
+  .contenido h2 {
+    font-size: 22px;
+  }
+
+  .contenido button {
+    padding: 10px 40px;
+    font-size: 18px;
+    width: 100%; /* Botón más fácil de tocar en móvil */
+  }
+
+  .imagen {
+    order: 1; /* La imagen pasa arriba del texto */
+    padding-right: 0;
+    justify-content: center;
+    max-height: 200px; /* Limitamos la imagen para que no empuje el texto fuera */
+  }
+
+  .imagen img {
+    transform: scale(1); /* Quitamos el aumento para que no se corte */
+  }
+}
+
+/* Celulares pequeños (Máximo 480px) */
+@media (max-width: 480px) {
+  .carousel {
+    height: 480px;
+  }
+
+  .contenido h1 {
+    font-size: 32px;
+  }
+
+  .contenido h2 {
+    font-size: 18px;
+  }
+}
