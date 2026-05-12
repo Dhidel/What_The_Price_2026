@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core'; 
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common'; 
 import { filter, Subscription } from 'rxjs';
 import { UserService, User } from '../../app/services/user';
 
@@ -20,17 +20,21 @@ export class SearchNavbar implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    public userService: UserService,
+    @Inject(PLATFORM_ID) private platformId: Object // 3. Inyecta el ID de plataforma
   ) {} //Inyecciones
 
   ngOnInit(): void {
     this.refreshUser();
 
-    this.routerSub = this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.refreshUser();
-      }); //carga usuarios aunque cambie de ruta
+    if (isPlatformBrowser(this.platformId)) {
+      this.routerSub = this.router.events
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe(() => {
+          this.refreshUser();
+          this.isMenuOpen = false; // Cerramos el menú al navegar
+        });
+    }
   }
 
   ngOnDestroy(): void {
@@ -54,9 +58,11 @@ export class SearchNavbar implements OnInit, OnDestroy {
     this.showAboutText = !this.showAboutText; //Muestra el texto
   }
 
-  contactWhatsApp(): void {  //te lleva a whatsapp
-    const msg = encodeURIComponent('Hola, necesito asistencia técnica en WTP');
-    window.open(`https://wa.me/50254308032?text=${msg}`, '_blank');
-    this.toggleMenu();
+  contactWhatsApp(): void {
+    if (isPlatformBrowser(this.platformId)) { //Protege la llamada a window
+      const msg = encodeURIComponent('Hola, necesito asistencia técnica en WTP');
+      window.open(`https://wa.me/50254308032?text=${msg}`, '_blank');
+    }
+    this.isMenuOpen = false;
   }
 }

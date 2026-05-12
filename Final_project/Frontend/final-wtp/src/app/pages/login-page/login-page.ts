@@ -14,7 +14,7 @@ import { UserService, User } from '../../services/user';
 export class LoginPage {
   userData = {
     name: '',
-    contrasena: '', //Variables para el log in
+    password: '', //Variables para el log in
   };
 
   errorMessage = '';
@@ -28,22 +28,23 @@ export class LoginPage {
   onSubmit(): void {
     this.errorMessage = '';
 
-    if (!this.userData.name || !this.userData.contrasena) {
+    if (!this.userData.name || !this.userData.password) {
       this.errorMessage = 'Por favor, llena todos los campos.';
       return;
     } //Mensaje de error
 
     this.loading = true;
 
-    this.userService.login(this.userData.name, this.userData.contrasena).subscribe({
+    this.userService.login(this.userData.name, this.userData.password).subscribe({
       next: (user: User) => {
         this.userService.setUser(user);
         this.loading = false;
         this.router.navigate(['/profile']); //Valida el usuario
       },
-      error: () => {
+      error: (err) => {
         this.loading = false;
         this.errorMessage = 'Nombre o contraseña incorrectos.';
+        console.error('Login error:', err);
       }, //Si no es valido el usuario tira un mensaje de error
     });
   }

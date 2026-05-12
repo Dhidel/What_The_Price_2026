@@ -2,8 +2,8 @@
   <div class="register-card">
     <div class="register-header">
       <span class="badge">Crear cuenta</span>
-      <h2>Regístrate</h2>
-      <p>Completa tus datos para guardar tu perfil localmente.</p>
+      <h2>Únete a WTP</h2>
+      <p>Crea tu perfil para comparar precios y guardar tus favoritos.</p>
     </div>
 
     <form class="register-form" (ngSubmit)="onSubmit()">
@@ -20,15 +20,27 @@
       </div>
 
       <div class="input-group">
-        <label for="plan">Plan</label>
+        <label for="gmail">Correo Electrónico</label>
+        <input
+          id="gmail"
+          type="email"
+          name="gmail"
+          [(ngModel)]="userData.gmail"
+          placeholder="ejemplo@gmail.com"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="plan">Plan de preferencia</label>
         <select
           id="plan"
           name="plan"
           [(ngModel)]="userData.plan"
           required
         >
-          <option value="basic">Básico</option>
-          <option value="plus">Plus</option>
+          <option value="basic">Básico (Gratis)</option>
+          <option value="plus">Plus (Premium)</option>
         </select>
       </div>
 
@@ -37,19 +49,21 @@
         <input
           id="password"
           type="password"
-          name="contrasena"
-          [(ngModel)]="userData.contrasena"
-          placeholder="••••••••"
+          name="password"
+          [(ngModel)]="userData.password"
+          placeholder="Mínimo 8 caracteres"
           required
         />
       </div>
 
-      <button type="button" (click)="onSubmit()">Registrarse</button>
+      <button type="submit" class="btn-register" [disabled]="loading">
+        {{ loading ? 'Creando cuenta...' : 'Registrarse' }}
+      </button>
     </form>
 
     <div class="register-footer">
-      <span>¿Ya tienes cuenta?</span>
-      <a (click)="navigate('/login')">Ir al login</a> 
+      <span>¿Ya tienes una cuenta?</span>
+      <a (click)="navigate('/login')">Inicia sesión aquí</a> 
     </div>
   </div>
 </div>

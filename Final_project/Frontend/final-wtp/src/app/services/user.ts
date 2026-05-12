@@ -4,46 +4,48 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface User {
-  id?: number;
+  user_id?: number;
   name: string;
   plan: string;
-  contrasena: string;
+  gmail: string;
+  password: string;
+  create_date?: Date;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3004/users';
-  private loginUrl = 'http://localhost:3004/login'; //Se definen las rutas
+  private apiUrl = 'https://what-the-price-2026-9jx2.onrender.com/users';
+  private loginUrl = 'https://what-the-price-2026-9jx2.onrender.com/login'; //Se definen las rutas
 
   constructor(
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: object //Inyección
   ) {}
 
-  getUser(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`); //Llamar un usuario específico
-  }
+  getUser(user_id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${user_id}`); //Llamar un usuario específico
+  } 
 
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl); //LLama a todos los usuarios
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user); //Usa el post para crear un usuario
+    return this.http.post<User>(this.apiUrl, user);  //Usa el post para crear un usuario
   }
 
-  login(name: string, contrasena: string): Observable<User> {
-    return this.http.post<User>(this.loginUrl, { name, contrasena }); //Valida los usuarios para el log in
+  login(name: string, password: string): Observable<User> {
+    return this.http.post<User>(this.loginUrl, { name, password }); //Valida los usuarios para el log in
   }
 
-  updateUser(id: number, data: Partial<User>): Observable<User> {
-    return this.http.patch<User>(`${this.apiUrl}/${id}`, data);  //Patch para actualizar datos (Falta implementar en el perfil)
+  updateUser(user_id: number, data: Partial<User>): Observable<User> {
+    return this.http.patch<User>(`${this.apiUrl}/${user_id}`, data); //Patch para actualizar datos (Falta implementar en el perfil)
   }
 
-  deleteUser(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`); //Delete para borrar usuario (Falata implementar
+  deleteUser(user_id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${user_id}`); //Delete para borrar usuario (Falata implementar
   }
 
   setUser(user: User): void {
