@@ -17,17 +17,17 @@
 
   <div class="navbar-right">
     <ng-container *ngIf="currentUser; else guestActions">
-      <button class="icon-btn" (click)="navigate('/favorites-page')" aria-label="Favoritos" title="Favoritos">
+      <button class="icon-btn" (click)="navigate('/favorites-page')" title="Favoritos">
         ♡
       </button>
 
-      <button class="icon-btn" (click)="navigate('/profile')" aria-label="Perfil" title="Perfil">
-        👤
+      <button class="icon-btn" (click)="navigate('/profile')" title="Perfil">
+        👤 <span class="nav-user-name">{{ currentUser.name }}</span>
       </button>
     </ng-container>
 
     <ng-template #guestActions>
-      <a routerLink="/login">Log in</a>
+      <a routerLink="/login" class="login-link">Log in</a>
       <a routerLink="/register" class="signup-button">Sign up</a>
     </ng-template>
   </div>
@@ -35,21 +35,29 @@
 
 <div class="sidenav" [class.open]="isMenuOpen">
   <div class="sidenav-header">
+    <span *ngIf="currentUser" class="user-welcome">Bienvenido, {{ currentUser.name }}</span>
     <span class="close-btn" (click)="toggleMenu()">&times;</span>
   </div>
 
   <nav class="sidenav-content">
-    <a (click)="navigate('/favorites-page')">1) Favoritos</a>
-    <a (click)="navigate('/profile')">2) Perfil</a>
+    <ng-container *ngIf="currentUser">
+      <a (click)="navigate('/favorites-page')">1) Favoritos</a>
+      <a (click)="navigate('/profile')">2) Mi Perfil</a>
+    </ng-container>
+
     <a (click)="toggleAbout()">3) Nosotros</a>
 
     <div class="about-text" *ngIf="showAboutText">
       <p>
-        What the price es una página para comparar los productos electronicos entre las páginas más reconocidas del país, con el enfoque de eficientizar la vida de los Guatemaltecos al momento de realizar una compra.
+        What the price es una página para comparar productos electrónicos en Guatemala, enfocada en eficientizar la compra de los guatemaltecos.
       </p>
     </div>
 
     <a (click)="contactWhatsApp()">4) Servicio al cliente</a>
+
+    <a *ngIf="currentUser" (click)="userService.logout(); refreshUser(); navigate('/')" class="logout-item">
+      5) Cerrar Sesión
+    </a>
   </nav>
 </div>
 

@@ -2,31 +2,19 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config()
-const AutoIncrement = require('mongoose-sequence')(mongoose);
+require('dotenv').config();
 
 const app = express(); //Ponerle nombre a la constante con las especificaciones de express
 const PORT = process.env.PORT || 3006; //El puerto 
 
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ Conectado a MongoDB Atlas'))
+  .catch(err => console.error('❌ Error de conexión:', err));
+
+  const User = require('./models/Users'); // Importa el modelo
+
 app.use(cors()); //Para aceptar peticiones
 app.use(express.json()); //Leer los archivos en formato json
-
-//Conexión a la base de datos
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Conectado a MongoDB Atlas (Proyecto WTP)')) //Se ejecuta si se cumple
-  .catch(err => console.error('Error de conexión:', err)); //Se ejecuta si no se cumple
-
-//Definición del esquema, sobre cómo se ve un usuario
-const userSchema = new mongoose.Schema({
-  name: String,
-  gmail: { type: String, unique: true },
-  plan: { type: String, default: 'basic' },
-  password: { type: String, required: true },
-  create_date: { type: Date, default: Date.now }
-});
-
-userSchema.plugin(AutoIncrement, { inc_field: 'user_id', start_seq: 1002 });
-const User = mongoose.model('User', userSchema); //La conexión entre los endpoints y la base de datos
 
 //GET - Todo
 app.get('/users', async (req, res) => {
