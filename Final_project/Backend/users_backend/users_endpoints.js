@@ -110,11 +110,11 @@ app.patch('/users/:user_id', async (req, res) => {
 });
 
 //DELETE - Elimina un usuario (Se implementará en la hamburguer-bar para eliminar un usuario)
-app.delete('/users/:user_id', async (req, res) => {
+app.delete('/users/:id', async (req, res) => {
   const { user_id } = req.params;
 
   try {
-    const deletedUser = await User.findOneAndDelete({ user_id: parseInt(user_id) });
+    const deletedUser = await User.findByIdAndDelete(id);
 
     if (!deletedUser) {
       return res.status(404).json({ error: 'Usuario no encontrado' });

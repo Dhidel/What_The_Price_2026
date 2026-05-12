@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface User {
-  user_id?: number;
+  _id?: string;
   name: string;
   plan: string;
   gmail: string;
@@ -44,9 +44,9 @@ export class UserService {
     return this.http.patch<User>(`${this.apiUrl}/${user_id}`, data); //Patch para actualizar datos (Falta implementar en el perfil)
   }
 
-  deleteUser(user_id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${user_id}`); //Delete para borrar usuario (Falata implementar
-  }
+deleteUser(id: string): Observable<any> {
+  return this.http.delete<any>(`${this.apiUrl}/users/${id}`);  //Delete para borrar usuario (Falata implementar
+} 
 
   setUser(user: User): void {
     if (isPlatformBrowser(this.platformId)) {
