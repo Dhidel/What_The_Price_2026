@@ -1,13 +1,13 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService, Product } from '../../../services/product';
 import { SearchNavbar } from '../../../components/search-navbar/search-navbar';
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, SearchNavbar],
+  imports: [CommonModule, SearchNavbar, RouterLink],
   templateUrl: './search-results.html',
   styleUrl: './search-results.css',
 })

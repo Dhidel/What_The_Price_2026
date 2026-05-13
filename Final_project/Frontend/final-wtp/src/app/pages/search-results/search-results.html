@@ -20,7 +20,7 @@
 
       <!-- *ngFor recorre el array "products" que vino del backend
            Por cada producto crea una card automáticamente -->
-      <div class="product-card" *ngFor="let product of products">
+      <div class="product-card" *ngFor="let product of products" routerLink="/product" style="cursor: pointer;">
 
         <!-- Si el producto tiene imageUrl la muestra, si no muestra la imagen por defecto
              [src] singifica que l valor viene de la variable, no está hardcodeado
