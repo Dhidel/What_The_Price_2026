@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router(); // En vez de app, usa router porque es un archivo separado
 const Product = require('../models/product.model'); // Importa el modelo de producto
 
-// GET /api/products  (devuelve todos los productos, o filtra por ?name=...)
+// GET /api/products  (devuelve todos los productos, o filtra por ?name=)
 router.get('/', async (req, res) => {
   try {
-    const { name } = req.query;
+    const { name } = req.query; // lee el parámetro ?name= de la URL si existe
 
     const filter = name
-      ? { name: { $regex: name, $options: 'i' } }
-      : {};
+      ? { name: { $regex: name, $options: 'i' } } // busca coincidencias parciales, sin importar mayúsculas
+      : {}; // sin ?name, el filtro vacío devuelve todos los productos
 
-    const products = await Product.find(filter);
-    res.json(products);
+    const products = await Product.find(filter); // consulta MongoDB con el filtro construido
+    res.json(products); // responde con el arreglo de productos en JSON
   } catch (err) {
-    res.status(500).json({ error: 'Error al obtener productos' });
+    res.status(500).json({ error: 'Error al obtener productos' }); // fallo de base de datos
   }
 });
 
